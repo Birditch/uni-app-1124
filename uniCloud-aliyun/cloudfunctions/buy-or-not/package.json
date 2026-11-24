@@ -1,0 +1,11 @@
+{
+  "name": "buy-or-not",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "cloudfunction-config": {
+    "runtime": "Nodejs18",
+    "memorySize": 256,
+    "timeout": 20
+  }
+}

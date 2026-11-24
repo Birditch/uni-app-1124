@@ -1,0 +1,10 @@
+{
+  "bsonType": "object",
+  "required": ["userId", "createdAt"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string", "description": "匿名会话令牌的 SHA-256 摘要" },
+    "userId": { "bsonType": "string" },
+    "createdAt": { "bsonType": "double" }
+  }
+}

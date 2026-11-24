@@ -1,0 +1,232 @@
+.profile {
+  color: #211e1e;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.page-title, .page-description, .summary-value, .summary-note, .panel-title,
+.panel-description, .entry-title, .entry-meta, .entry-amount, .empty-title,
+.empty-note, .membership-title, .membership-note {
+  display: block;
+}
+
+.page-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -.05em;
+  line-height: 1.15;
+}
+
+.page-description {
+  color: #756c68;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 9px;
+}
+
+.profile-button {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 7px;
+  justify-content: center;
+  line-height: 1.35;
+  margin: 0;
+  min-height: 42px;
+  padding: 0 14px;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.profile-button::after { border: 0; }
+.profile-button:active { transform: translateY(1px); }
+.profile-button:focus-visible { outline: 2px solid #cf3e30; outline-offset: 2px; }
+.profile-button[disabled] { opacity: .6; }
+.primary-button { background: #cf3e30; color: #fff; flex-shrink: 0; }
+.secondary-button { background: #fff5f1; border-color: #f9ddd5; color: #9c392d; flex-shrink: 0; }
+.text-button { background: transparent; color: #a23228; }
+
+.summary-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.summary-card {
+  background: #fff;
+  border: 1px solid #eee8e4;
+  border-radius: 20px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 19px 20px;
+}
+
+.saved-card { background: #edf8f1; border-color: #deefe4; }
+.spent-card { background: #fff1ec; border-color: #fbe5df; }
+.ratio-card { background: #fffbf1; border-color: #f6ecd6; }
+.summary-label { align-items: center; display: flex; font-size: 13px; font-weight: 720; gap: 9px; }
+
+.summary-icon, .panel-icon, .membership-icon, .ledger-entry-icon, .record-placeholder {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.summary-icon { border-radius: 11px; height: 36px; width: 36px; }
+.saved-card .summary-icon { background: #d9efe2; color: #286549; }
+.spent-card .summary-icon { background: #ffe1d8; color: #a7382d; }
+.ratio-card .summary-icon { background: #f8ebcb; color: #85571b; }
+
+.summary-value {
+  font-size: clamp(25px, 3.3vw, 42px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  letter-spacing: -.055em;
+  line-height: 1.2;
+  margin: 12px 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.summary-note { color: #6e645e; font-size: 12px; line-height: 1.6; }
+.ratio-track { background: #f3e8cd; border-radius: 999px; height: 5px; margin: 8px 0 7px; overflow: hidden; }
+.ratio-fill { background: #dbab50; border-radius: inherit; height: 100%; transition: width 220ms ease; }
+
+.archive-grid {
+  align-items: start;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr);
+}
+
+.archive-panel {
+  background: #fff;
+  border: 1px solid #eee8e4;
+  border-radius: 20px;
+  min-width: 0;
+  padding: 20px;
+}
+
+.panel-header { align-items: center; display: flex; gap: 11px; }
+.panel-icon, .membership-icon { background: #fff0eb; border-radius: 12px; color: #ac3c2f; height: 40px; width: 40px; }
+.ledger-panel-icon { background: #e9f8ef; color: #286549; }
+.panel-heading { flex: 1 1 auto; min-width: 0; text-align: left; }
+.panel-title { font-size: 17px; font-weight: 780; line-height: 1.35; }
+.panel-description { color: #756c68; font-size: 12px; font-weight: 500; line-height: 1.45; margin-top: 3px; }
+
+.record-filters { display: flex; flex-wrap: wrap; gap: 5px; margin: 15px 0 3px; }
+.filter-button { background: #f8f5f3; color: #655d59; min-height: 36px; padding: 0 9px; }
+.filter-active { background: #fff0eb; border-color: #f5d7cd; color: #96392e; }
+.record-list, .ledger-list { margin-top: 5px; }
+.ledger-list { margin-top: 12px; }
+
+.record-row, .ledger-row {
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid #f1ece8;
+  box-sizing: border-box;
+  display: flex;
+  gap: 10px;
+  padding: 13px 0;
+  width: 100%;
+}
+
+.record-row { background: transparent; justify-content: flex-start; }
+.record-row:last-child, .ledger-row:last-child { border-bottom: 0; padding-bottom: 4px; }
+.record-image { background: #f5efeb; border-radius: 10px; flex-shrink: 0; height: 43px; width: 43px; }
+.record-placeholder { color: #9b7163; }
+.entry-main { flex: 1 1 auto; min-width: 0; text-align: left; }
+.entry-title { color: #292322; font-size: 14px; font-weight: 720; line-height: 1.4; overflow-wrap: anywhere; }
+.entry-meta { color: #756c68; font-size: 11px; font-weight: 500; line-height: 1.4; margin-top: 4px; }
+.record-result { align-items: flex-end; display: flex; flex: 0 0 auto; flex-direction: column; gap: 5px; }
+.entry-amount { color: #292322; flex: 0 0 auto; font-size: 13px; font-variant-numeric: tabular-nums; font-weight: 750; text-align: right; }
+.result-badge { border-radius: 6px; font-size: 10px; padding: 3px 5px; white-space: nowrap; }
+.badge-pending { background: #fff4d9; color: #745116; }
+.badge-saved { background: #e9f8ee; color: #2c684b; }
+.badge-spent { background: #fff0eb; color: #923b32; }
+.record-chevron { color: #8e837e; flex-shrink: 0; }
+.ledger-entry-icon { background: #f5f2ed; border-radius: 9px; color: #866f60; height: 33px; width: 33px; }
+
+.ledger-form {
+  animation: profile-enter 170ms ease both;
+  background: #faf8f6;
+  border: 1px solid #eee8e4;
+  border-radius: 13px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  margin-top: 14px;
+  padding: 12px;
+}
+
+.ledger-field { min-width: 0; }
+.field-label { color: #544644; display: block; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+.field-input { background: #fff; border: 1px solid #e8dfd8; border-radius: 8px; box-sizing: border-box; font-size: 14px; height: 41px; padding: 0 9px; width: 100%; }
+.field-input:focus-within { border-color: #d94335; }
+.ledger-submit { grid-column: 1 / -1; min-height: 38px; }
+.form-error { color: #a8342a; font-size: 12px; grid-column: 1 / -1; line-height: 1.5; }
+
+.profile-empty {
+  align-items: center;
+  color: #8b6e63;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-height: 110px;
+  padding: 22px 8px 13px;
+  text-align: center;
+}
+
+.empty-title { color: #413736; font-size: 14px; font-weight: 720; }
+.empty-note { color: #756c68; font-size: 12px; }
+
+.membership-panel { background: #fff; border: 1px solid #eee8e4; border-radius: 16px; }
+.membership-toggle { background: transparent; gap: 11px; justify-content: flex-start; padding: 13px 17px; width: 100%; }
+.membership-icon { background: #fff3da; color: #875614; height: 36px; width: 36px; }
+.membership-title { color: #362d2b; font-size: 14px; font-weight: 750; }
+.membership-chevron { color: #867b75; transition: transform 170ms ease; }
+.membership-chevron.expanded { transform: rotate(90deg); }
+.membership-content { animation: profile-enter 170ms ease both; border-top: 1px solid #f1ece8; color: #544644; font-size: 13px; line-height: 1.65; margin: 0 17px; padding: 10px 0 13px; }
+.membership-note { color: #756c68; font-size: 12px; }
+
+@keyframes profile-enter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) {
+  .primary-button:hover { background: #be352a; }
+  .secondary-button:hover, .filter-button:hover { border-color: #e7a99a; }
+  .record-row:hover, .membership-toggle:hover { background: #fcfaf9; }
+}
+
+@media (max-width: 780px) {
+  .archive-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .profile { gap: 16px; }
+  .page-description { font-size: 12px; }
+  .summary-grid { gap: 7px; }
+  .summary-card { border-radius: 13px; padding: 10px 8px; }
+  .summary-label { font-size: 11px; gap: 4px; }
+  .summary-icon { border-radius: 7px; height: 23px; width: 23px; }
+  .summary-value { font-size: clamp(20px, 5.5vw, 27px); margin: 8px 0 4px; }
+  .summary-note { font-size: 10px; line-height: 1.4; }
+  .archive-grid { gap: 13px; }
+  .archive-panel { border-radius: 16px; padding: 14px 12px; }
+  .record-row, .ledger-row { gap: 8px; }
+  .record-chevron { display: none; }
+  .membership-toggle { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-button, .ratio-fill, .membership-chevron { transition: none; }
+  .ledger-form, .membership-content { animation: none; }
+}

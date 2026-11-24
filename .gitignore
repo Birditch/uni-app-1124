@@ -1,0 +1,14 @@
+node_modules/
+dist/
+unpackage/
+.env
+.env.local
+.env.*.local
+.idea/
+.vscode/
+.hbuilderx/
+.playwright/
+.omc/
+.DS_Store
+npm-debug.log*
+project.private.config.json

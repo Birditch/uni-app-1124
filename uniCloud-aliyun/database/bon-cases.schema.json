@@ -1,0 +1,23 @@
+{
+  "bsonType": "object",
+  "required": ["title", "category", "authorId", "createdAt", "hidden"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string" },
+    "title": { "bsonType": "string" },
+    "category": { "bsonType": "string" },
+    "priceCents": { "bsonType": "int" },
+    "reason": { "bsonType": "string" },
+    "concern": { "bsonType": "string" },
+    "alternative": { "bsonType": "string" },
+    "image": { "bsonType": "string" },
+    "authorId": { "bsonType": "string" },
+    "createdAt": { "bsonType": "double" },
+    "hidden": { "bsonType": "bool", "description": "审核下架标记" },
+    "urgent": { "bsonType": "bool" },
+    "buy": { "bsonType": "int" },
+    "stop": { "bsonType": "int" },
+    "votes": { "bsonType": "object" },
+    "comments": { "bsonType": "array", "items": { "bsonType": "object" } }
+  }
+}

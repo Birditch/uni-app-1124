@@ -1,0 +1,228 @@
+.ranking-page {
+  --rank-ink: #211e1e;
+  --rank-muted: #746c68;
+  --rank-border: #eee8e4;
+  --rank-accent: #bc3f30;
+  color: var(--rank-ink);
+}
+
+.ranking-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 208px;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 24px;
+  padding: 28px 38px;
+  border: 1px solid #f8e2da;
+  border-radius: 23px;
+  background: radial-gradient(ellipse at 85% 0%, #ffdfd4, transparent 65%), #fff0eb;
+}
+
+.ranking-hero-copy { position: relative; z-index: 1; }
+
+.week-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .68);
+  color: var(--rank-accent);
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+.ranking-title {
+  display: block;
+  margin-top: 14px;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 850;
+  letter-spacing: -.05em;
+  line-height: 1.12;
+}
+
+.ranking-intro { display: block; margin-top: 10px; color: #795b53; font-size: 14px; line-height: 1.65; }
+
+.trophy-art {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: clamp(25px, 11vw, 156px);
+  display: grid;
+  width: 206px;
+  height: 206px;
+  place-items: center;
+  transform: translateY(-50%);
+}
+
+.trophy-orbit { position: absolute; border: 1px solid rgba(225, 110, 82, .25); border-radius: 50%; }
+.trophy-orbit-outer { inset: 1px; }
+.trophy-orbit-inner { inset: 17px; border-style: dashed; }
+
+.trophy-plate {
+  display: grid;
+  width: 130px;
+  height: 130px;
+  place-items: center;
+  border: 2px solid rgba(255, 255, 255, .8);
+  border-radius: 39px;
+  background: linear-gradient(145deg, #fffaf7, #ffddce);
+  color: #ed624c;
+  box-shadow: 0 15px 28px rgba(181, 64, 41, .12), inset 0 -3px 0 rgba(214, 100, 78, .13);
+  transform: rotate(10deg);
+  animation: trophy-enter .42s cubic-bezier(.2, .75, .3, 1) both;
+}
+
+.trophy-spark {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff5ef;
+  color: #e96d51;
+  box-shadow: 0 3px 10px rgba(181, 64, 41, .09);
+}
+
+.trophy-spark-top { top: 23px; right: 8px; width: 40px; height: 40px; }
+.trophy-spark-bottom { bottom: 31px; left: 4px; width: 28px; height: 28px; }
+
+.ranking-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(245px, 1fr); align-items: start; gap: 22px; }
+.ladder-panel, .weekly-panel { overflow: hidden; border: 1px solid var(--rank-border); border-radius: 20px; background: #fff; }
+.ranking-tabs { display: flex; gap: 5px; padding: 13px 14px; border-bottom: 1px solid var(--rank-border); }
+
+.ranking-tab,
+.ladder-row,
+.empty-action {
+  appearance: none;
+  margin: 0;
+  border: 0;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.ranking-tab::after, .ladder-row::after, .empty-action::after { border: 0; }
+
+.ranking-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--rank-muted);
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: background-color .17s ease, color .17s ease;
+}
+
+.ranking-tab-active { background: #fff0eb; color: var(--rank-accent); }
+.ladder-caption { padding: 14px 18px; color: var(--rank-muted); font-size: 12px; line-height: 1.65; }
+.ladder-rows { animation: list-enter .2s ease-out both; }
+
+.ladder-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 17px;
+  border-top: 1px solid #f4efec;
+  border-radius: 0;
+  background: #fff;
+  color: var(--rank-ink);
+  text-align: left;
+  transition: background-color .17s ease;
+}
+
+.ranking-tab:focus-visible, .ladder-row:focus-visible, .empty-action:focus-visible { outline: 2px solid var(--rank-accent); outline-offset: -3px; }
+
+.rank-position {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: #f6f5f4;
+  color: #635b57;
+  font-size: 13px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.rank-gold { background: #fff2d9; color: #8c4f0a; }
+.rank-silver { background: #edf0f5; color: #465574; }
+.rank-bronze { background: #faeae2; color: #89472c; }
+.rank-thumb { display: block; width: 52px; height: 52px; flex: 0 0 52px; border-radius: 11px; background: #f7efeb; }
+.rank-thumb-empty { display: grid; place-items: center; color: #b97b67; }
+.rank-case { min-width: 0; flex: 1; }
+.rank-case-title { display: block; overflow: hidden; color: var(--rank-ink); font-size: 14px; font-weight: 740; text-overflow: ellipsis; white-space: nowrap; }
+.rank-case-info { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 9px; margin-top: 5px; color: var(--rank-muted); font-size: 12px; }
+.rank-case-price { color: #57504d; font-weight: 650; font-variant-numeric: tabular-nums; }
+.rank-score { display: flex; min-width: 46px; flex-direction: column; align-items: flex-end; white-space: nowrap; }
+.rank-score-value { color: var(--rank-accent); font-size: 20px; font-weight: 820; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.rank-score-unit { margin-top: 3px; color: var(--rank-muted); font-size: 10px; }
+.rank-chevron { flex: 0 0 auto; color: #a79891; }
+
+.ranking-empty { display: flex; min-height: 230px; flex-direction: column; align-items: center; justify-content: center; gap: 15px; padding: 20px; text-align: center; }
+.empty-emblem { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 17px; background: #fff0eb; color: var(--rank-accent); }
+.empty-title { font-size: 15px; font-weight: 700; }
+.empty-action { display: inline-flex; min-height: 39px; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 9px; background: #fff0eb; color: var(--rank-accent); font-size: 13px; font-weight: 700; }
+
+.weekly-panel { padding: 17px; }
+.weekly-heading { display: flex; align-items: center; gap: 9px; padding-bottom: 12px; font-size: 16px; font-weight: 780; }
+.weekly-icon { display: grid; width: 33px; height: 33px; place-items: center; border-radius: 10px; background: #e9f8ef; color: #28784f; }
+.weekly-stat { display: flex; align-items: center; justify-content: space-between; padding: 13px 2px; border-top: 1px solid #f3eeea; color: var(--rank-muted); font-size: 13px; }
+.weekly-stat:last-child { padding-bottom: 2px; }
+.weekly-stat-value { color: var(--rank-ink); font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.weekly-note { display: flex; align-items: flex-start; gap: 8px; margin-top: 13px; padding: 13px; color: var(--rank-muted); font-size: 12px; line-height: 1.6; }
+.weekly-note-icon { flex-shrink: 0; }
+
+@keyframes list-enter {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes trophy-enter {
+  from { opacity: 0; transform: translateY(8px) rotate(4deg) scale(.94); }
+  to { opacity: 1; transform: translateY(0) rotate(10deg) scale(1); }
+}
+
+@media (hover: hover) {
+  .ranking-tab:not(.ranking-tab-active):hover, .ladder-row:hover { background: #fdf7f3; }
+  .empty-action:hover { background: #ffe5dd; }
+}
+
+@media (max-width: 760px) {
+  .ranking-layout { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+  .ranking-hero { min-height: 163px; margin-bottom: 16px; padding: 20px; border-radius: 18px; }
+  .trophy-art { right: -5px; transform: translateY(-50%) scale(.72); }
+  .ranking-intro { max-width: 65%; }
+  .weekly-panel, .ladder-panel { border-radius: 16px; }
+}
+
+@media (max-width: 440px) {
+  .ranking-hero { min-height: 153px; padding: 17px; }
+  .trophy-art { right: -32px; transform: translateY(-50%) scale(.56); }
+  .ranking-intro { max-width: 64%; font-size: 12px; }
+  .ranking-tabs { gap: 3px; padding: 8px; }
+  .ranking-tab { flex: 1; gap: 5px; padding: 7px 6px; font-size: 12px; }
+  .ladder-caption { padding: 11px 12px; }
+  .ladder-row { gap: 8px; padding: 12px 9px; }
+  .rank-position { width: 24px; height: 26px; flex-basis: 24px; font-size: 12px; }
+  .rank-thumb { width: 39px; height: 39px; flex-basis: 39px; border-radius: 8px; }
+  .rank-case-title { font-size: 13px; }
+  .rank-case-info { margin-top: 3px; font-size: 10px; }
+  .rank-score-value { font-size: 17px; }
+  .rank-chevron { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trophy-plate, .ladder-rows { animation: none; }
+  .ranking-tab, .ladder-row { transition: none; }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "IndexName": "public_recent",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [{ "Name": "private", "Direction": "1" }, { "Name": "createdAt", "Direction": "-1" }],
+      "MgoIsUnique": false
+    }
+  },
+  {
+    "IndexName": "member_recent",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [{ "Name": "memberIds", "Direction": "1" }, { "Name": "createdAt", "Direction": "-1" }],
+      "MgoIsUnique": false
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "bsonType": "object",
+  "required": ["title", "target", "authorId", "memberIds", "createdAt"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string" },
+    "title": { "bsonType": "string" },
+    "description": { "bsonType": "string" },
+    "target": { "bsonType": "int" },
+    "private": { "bsonType": "bool" },
+    "authorId": { "bsonType": "string" },
+    "memberIds": { "bsonType": "array", "items": { "bsonType": "string" } },
+    "checkIns": { "bsonType": "object" },
+    "theme": { "bsonType": "string" },
+    "icon": { "bsonType": "string" },
+    "createdAt": { "bsonType": "double" }
+  }
+}

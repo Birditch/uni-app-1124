@@ -1,0 +1,16 @@
+[
+  {
+    "IndexName": "visible_recent",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [{ "Name": "hidden", "Direction": "1" }, { "Name": "createdAt", "Direction": "-1" }],
+      "MgoIsUnique": false
+    }
+  },
+  {
+    "IndexName": "author_visible_recent",
+    "MgoKeySchema": {
+      "MgoIndexKeys": [{ "Name": "authorId", "Direction": "1" }, { "Name": "hidden", "Direction": "1" }, { "Name": "createdAt", "Direction": "-1" }],
+      "MgoIsUnique": false
+    }
+  }
+]

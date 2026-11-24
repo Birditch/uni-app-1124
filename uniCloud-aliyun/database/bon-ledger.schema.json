@@ -1,0 +1,13 @@
+{
+  "bsonType": "object",
+  "required": ["title", "amountCents", "authorId", "createdAt"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string" },
+    "caseId": { "bsonType": "string" },
+    "title": { "bsonType": "string" },
+    "amountCents": { "bsonType": "int" },
+    "authorId": { "bsonType": "string" },
+    "createdAt": { "bsonType": "double" }
+  }
+}

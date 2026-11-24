@@ -1,0 +1,13 @@
+{
+  "pages": [
+    { "path": "pages/index/index", "style": { "navigationBarTitleText": "买不买" } },
+    { "path": "pages/detail/index", "style": { "navigationBarTitleText": "消费审批单" } },
+    { "path": "pages/compose/index", "style": { "navigationBarTitleText": "发起审批" } }
+  ],
+  "globalStyle": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#FAF9F7"
+  }
+}

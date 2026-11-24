@@ -1,0 +1,17 @@
+{
+  "name": "买不买",
+  "appid": "",
+  "description": "匿名消费投票与自律打卡",
+  "versionName": "1.0.0",
+  "versionCode": 100,
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "touristappid",
+    "setting": { "urlCheck": true, "es6": true, "minified": true },
+    "usingComponents": true
+  },
+  "h5": {
+    "title": "买不买 · 冲动消费裁判所",
+    "router": { "mode": "hash" }
+  }
+}

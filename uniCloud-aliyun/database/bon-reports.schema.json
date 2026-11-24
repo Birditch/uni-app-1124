@@ -1,0 +1,13 @@
+{
+  "bsonType": "object",
+  "required": ["caseId", "reporterId", "reason", "status", "createdAt"],
+  "permission": { "read": false, "create": false, "update": false, "delete": false },
+  "properties": {
+    "_id": { "bsonType": "string" },
+    "caseId": { "bsonType": "string" },
+    "reporterId": { "bsonType": "string" },
+    "reason": { "bsonType": "string" },
+    "status": { "bsonType": "string", "enum": ["pending", "dismissed", "resolved"] },
+    "createdAt": { "bsonType": "double" }
+  }
+}
